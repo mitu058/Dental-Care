@@ -5,6 +5,7 @@ import AllTreatMents from "../Components/AllTreatMents";
 import Profile from "../Components/Profile";
 import Appoinments from "../Components/Appoinments";
 import ErrorPage from "../Components/ErrorPage";
+import DetailsCard from "../Components/DetailsCard";
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,17 @@ const router = createBrowserRouter([
             {
                 path:'/appoinments',
                 element:<Appoinments></Appoinments>
+            },
+            {
+                path:'/details/:id',
+                element:<DetailsCard></DetailsCard>,
+                loader:async ({params}) =>{
+                    const res = await fetch("/service.json")
+                    const data = await res.json()
+                    console.log(data,params);
+                    return data
+                    
+                }
             }
         ]
     }

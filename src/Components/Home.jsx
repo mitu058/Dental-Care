@@ -20,7 +20,10 @@ const Home = () => {
         <NavLink to='/treatments'>Show More</NavLink>
       </button>
 
+
+
       <FeedBack feedbackData={feedbackData}></FeedBack>
+
     </div>
   );
 };
